@@ -1,9 +1,3 @@
-# Dataset (large MRI scans ~160MB; download instructions in README)
-dataset/
-dataset.zip
-*.zip
-*.tar
-*.gz
 
 # Environments & Virtual Envs
 venv/
