@@ -24,27 +24,45 @@ from sklearn.metrics import (
     recall_score,
     roc_auc_score,
 )
+import sys
 import tensorflow as tf
 
-from preprocess import (
-    BATCH_SIZE,
-    CLASS_NAMES,
-    IMAGE_SIZE,
-    build_dataset,
-    find_images,
-    flatten_with_labels,
-)
+_WORKSPACE_ROOT = Path(__file__).resolve().parent.parent.parent
+if str(_WORKSPACE_ROOT) not in sys.path:
+    sys.path.insert(0, str(_WORKSPACE_ROOT))
+
+try:
+    from ml.preprocessing.preprocess import (
+        BATCH_SIZE,
+        CLASS_NAMES,
+        IMAGE_SIZE,
+        build_dataset,
+        find_images,
+        flatten_with_labels,
+    )
+except ImportError:
+    from preprocess import (
+        BATCH_SIZE,
+        CLASS_NAMES,
+        IMAGE_SIZE,
+        build_dataset,
+        find_images,
+        flatten_with_labels,
+    )
 
 
-CNN_MODEL_PATH = Path("baseline_cnn.keras")
-CNN_REPORT_PATH = Path("baseline_evaluation.txt")
-CNN_CM_PATH = Path("baseline_confusion_matrix.png")
+_MODELS_DIR = _WORKSPACE_ROOT / "ml" / "models"
+_EVAL_DIR = _WORKSPACE_ROOT / "ml" / "evaluation"
 
-EFFNET_MODEL_PATH = Path("efficientnet_b0.keras")
-EFFNET_REPORT_PATH = Path("efficientnet_evaluation.txt")
-EFFNET_CM_PATH = Path("efficientnet_confusion_matrix.png")
+CNN_MODEL_PATH = _MODELS_DIR / "baseline_cnn.keras" if (_MODELS_DIR / "baseline_cnn.keras").is_file() else Path("baseline_cnn.keras")
+CNN_REPORT_PATH = _EVAL_DIR / "baseline_evaluation.txt"
+CNN_CM_PATH = _EVAL_DIR / "baseline_confusion_matrix.png"
 
-TEST_DIR = Path("dataset/Testing")
+EFFNET_MODEL_PATH = _MODELS_DIR / "efficientnet_b0.keras" if (_MODELS_DIR / "efficientnet_b0.keras").is_file() else Path("efficientnet_b0.keras")
+EFFNET_REPORT_PATH = _EVAL_DIR / "efficientnet_evaluation.txt"
+EFFNET_CM_PATH = _EVAL_DIR / "efficientnet_confusion_matrix.png"
+
+TEST_DIR = _WORKSPACE_ROOT / "dataset" / "Testing" if (_WORKSPACE_ROOT / "dataset" / "Testing").is_dir() else Path("dataset/Testing")
 
 
 def load_test_dataset(

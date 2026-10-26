@@ -2,8 +2,8 @@
 BRAIN TUMOR MRI CLASSIFICATION - EFFICIENTNET-B0 EVALUATION
 ==================================================
 Model Architecture     : EfficientNetB0 (Transfer Learning)
-Model Checkpoint       : efficientnet_b0.keras
-Test Directory         : dataset\Testing
+Model Checkpoint       : D:\BrainTumour ml\brain-tumor-mri-classification\ml\models\efficientnet_b0.keras
+Test Directory         : D:\BrainTumour ml\brain-tumor-mri-classification\dataset\Testing
 Total Test Images      : 1600
 Correct Predictions    : 1400 / 1600 (87.50%)
 Incorrect Predictions  : 200 / 1600 (12.50%)
