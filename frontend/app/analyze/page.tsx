@@ -20,7 +20,7 @@ export default function AnalyzePage() {
 
   const saveToHistory = (pred: PredictionResponse, file: File) => {
     try {
-      const historyJson = localStorage.getItem("neuroscan_history");
+      const historyJson = localStorage.getItem("cerebra_history") || localStorage.getItem("neuroscan_history");
       const currentHistory: HistoryItem[] = historyJson ? JSON.parse(historyJson) : [];
 
       const newItem: HistoryItem = {
@@ -36,7 +36,7 @@ export default function AnalyzePage() {
 
       // Keep recent 20 scans
       const updated = [newItem, ...currentHistory].slice(0, 20);
-      localStorage.setItem("neuroscan_history", JSON.stringify(updated));
+      localStorage.setItem("cerebra_history", JSON.stringify(updated));
     } catch (e) {
       console.warn("Failed to save session history to localStorage", e);
     }
@@ -88,7 +88,7 @@ export default function AnalyzePage() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-900 pb-6">
         <div>

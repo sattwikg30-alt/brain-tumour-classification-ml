@@ -1,5 +1,5 @@
 # ==============================================================================
-# NeuroScan AI - Brain Tumor MRI Classification Single-Command Dev Launcher
+# Cerebra - Brain Tumor MRI Classification Single-Command Dev Launcher
 # Starts FastAPI internal backend (127.0.0.1:8000) and Next.js frontend (localhost:3000)
 # Browser URL: http://localhost:3000
 # ==============================================================================
@@ -19,7 +19,7 @@ Set-Location -Path $ProjectRoot
 
 Write-Host ""
 Write-Host "================================================================================" -ForegroundColor Cyan
-Write-Host "  NEUROSCAN AI - BRAIN TUMOR MRI CLASSIFICATION & EXPLAINABILITY (GRAD-CAM)" -ForegroundColor Cyan
+Write-Host "  CEREBRA - BRAIN TUMOR MRI CLASSIFICATION & EXPLAINABILITY (GRAD-CAM)" -ForegroundColor Cyan
 Write-Host "================================================================================" -ForegroundColor Cyan
 Write-Host "  Starting unified full-stack development environment..." -ForegroundColor Gray
 Write-Host ""

@@ -48,7 +48,7 @@ export default function ModelInfoPage() {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+    <div className="w-full px-4 sm:px-8 lg:px-12 py-10 space-y-10">
       {/* Page Title */}
       <div className="border-b border-slate-900 pb-6 space-y-2">
         <div className="flex items-center space-x-2">

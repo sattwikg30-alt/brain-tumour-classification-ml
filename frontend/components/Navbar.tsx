@@ -32,30 +32,32 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/85 border-b border-slate-800/80 shadow-2xl shadow-black/40">
+      <div className="w-full px-4 sm:px-8 lg:px-12 h-16 flex items-center justify-between">
         {/* Brand */}
-        <Link href="/" className="flex items-center space-x-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-sky-500 to-emerald-500 p-[1px] shadow-lg shadow-sky-500/20 group-hover:shadow-sky-500/40 transition-all">
+        <Link href="/" className="flex items-center space-x-3.5 group">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-sky-500 to-emerald-400 p-[1.5px] shadow-lg shadow-sky-500/20 group-hover:shadow-sky-500/40 transition-all duration-300">
             <div className="w-full h-full bg-slate-950 rounded-xl flex items-center justify-center">
-              <Brain className="w-5 h-5 text-sky-400 group-hover:scale-110 transition-transform" />
+              <Brain className="w-5 h-5 text-sky-400 group-hover:scale-110 transition-transform duration-300" />
             </div>
           </div>
           <div>
             <div className="flex items-center space-x-2">
-              <span className="font-bold text-lg tracking-tight bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
-                NeuroScan<span className="text-sky-400">AI</span>
+              <span className="font-extrabold text-xl tracking-tight bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent">
+                Cerebra<span className="text-sky-400">.ai</span>
               </span>
-              <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20 tracking-wide uppercase">
                 v1.0
               </span>
             </div>
-            <p className="text-[11px] text-slate-400 hidden sm:block">Brain Tumor MRI Classification & Grad-CAM</p>
+            <p className="text-[11px] text-slate-400 hidden sm:block tracking-wide">
+              Neural MRI Classification & Visual Explainability
+            </p>
           </div>
         </Link>
 
         {/* Navigation */}
-        <nav className="hidden md:flex items-center space-x-1">
+        <nav className="hidden md:flex items-center space-x-1.5 bg-slate-900/60 p-1.5 rounded-xl border border-slate-800/60">
           {navLinks.map((link) => {
             const Icon = link.icon;
             const isActive = pathname === link.href;

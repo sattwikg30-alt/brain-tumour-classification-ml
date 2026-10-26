@@ -20,7 +20,7 @@ export default function HistoryPage() {
 
   useEffect(() => {
     try {
-      const data = localStorage.getItem("neuroscan_history");
+      const data = localStorage.getItem("cerebra_history") || localStorage.getItem("neuroscan_history");
       if (data) {
         setHistory(JSON.parse(data));
       }
@@ -33,6 +33,7 @@ export default function HistoryPage() {
 
   const handleClearHistory = () => {
     if (confirm("Are you sure you want to clear your local session history?")) {
+      localStorage.removeItem("cerebra_history");
       localStorage.removeItem("neuroscan_history");
       setHistory([]);
     }
@@ -42,14 +43,14 @@ export default function HistoryPage() {
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(history, null, 2));
     const downloadAnchor = document.createElement("a");
     downloadAnchor.setAttribute("href", dataStr);
-    downloadAnchor.setAttribute("download", `neuroscan_history_${Date.now()}.json`);
+    downloadAnchor.setAttribute("download", `cerebra_history_${Date.now()}.json`);
     document.body.appendChild(downloadAnchor);
     downloadAnchor.click();
     downloadAnchor.remove();
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    <div className="w-full px-4 sm:px-8 lg:px-12 py-10 space-y-8">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-900 pb-6">
         <div>

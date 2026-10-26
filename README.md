@@ -1,4 +1,4 @@
-# NeuroScan AI — Brain Tumor MRI Classification & Visual Explainability (Grad-CAM)
+# Cerebra — Brain Tumor MRI Classification & Visual Explainability (Grad-CAM)
 
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue.svg)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.21.0-orange.svg)](https://www.tensorflow.org/)
@@ -61,7 +61,7 @@ Brain and central nervous system (CNS) tumors affect over 300,000 individuals gl
 2. **Morphological Overlap Across 4 Classes:** Differentiating between malignant infiltrative **Gliomas**, dural extra-axial **Meningiomas**, sellar-region **Pituitary Adenomas**, and unremarkable **Healthy Brain Scans** requires distinguishing subtle intensity variations, edema patterns, and mass effects. Crucially, healthy scans require **zero false negatives** to prevent traumatic, invasive workups.
 3. **The "Black-Box" AI Barrier:** Clinicians and multi-disciplinary tumor boards reject artificial intelligence models that output opaque percentage scores without spatial anatomical justification. Verifiable visual grounding is a regulatory and clinical prerequisite for deployment.
 
-**NeuroScan AI** addresses this challenge by combining transfer-learning convolutional neural networks with **Grad-CAM visual saliency mapping**, giving radiologists both high-confidence differential predictions and exact visual proof of the anatomical regions driving the decision.
+**Cerebra** addresses this challenge by combining transfer-learning convolutional neural networks with **Grad-CAM visual saliency mapping**, giving radiologists both high-confidence differential predictions and exact visual proof of the anatomical regions driving the decision.
 
 ---
 
@@ -629,6 +629,6 @@ Inference parity verification across both FastAPI and Streamlit confirmed $0.000
 
 ## 12. Clinical Disclaimers & Ethical AI Usage
 
-1. **Research & Decision-Support Only:** NeuroScan AI is developed for academic research, medical education, and clinical decision support technology demonstration. It is not an FDA-cleared or CE-marked diagnostic medical device.
+1. **Research & Decision-Support Only:** Cerebra is developed for academic research, medical education, and clinical decision support technology demonstration. It is not an FDA-cleared or CE-marked diagnostic medical device.
 2. **Physician-in-the-Loop:** This software is designed strictly to assist, not replace, board-certified neuroradiologists and medical specialists. AI-generated predictions and Grad-CAM saliency heatmaps must always be correlated with patient clinical history, physical examination, and histological biopsy confirmation.
 3. **Probability Calibration:** The reported confidence percentages represent normalized neural network class logits, not calibrated epidemiological probabilities.
